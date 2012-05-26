@@ -40,3 +40,4 @@ gem 'jquery-rails'
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
 end
+gem 'pry-rails'
