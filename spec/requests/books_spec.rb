@@ -18,5 +18,23 @@ describe "Books" do
     it "タイトルが設定されていること" do
       find("#book_title").value.should == book.title
     end
+
+    context "with update" do
+      let(:update_title){ 'update book title!' }
+
+      before do
+        fill_in "book[title]", with: update_title
+        click_on 'Update Book'
+      end
+
+      it "ページが遷移されていること" do
+        current_path.should == book_path(book)
+      end
+
+      it "タイトルが更新されていること" do
+        should have_content book.reload.title
+        book.reload.title.should == update_title
+      end
+    end
   end
 end
