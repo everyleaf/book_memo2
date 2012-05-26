@@ -8,6 +8,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
+      format.xml { render xml: @books }
       format.json { render json: @books }
     end
   end
@@ -17,6 +18,7 @@ class BooksController < ApplicationController
   def show
     respond_to do |format|
       format.html # show.html.erb
+      format.xml { render xml: @book }
       format.json { render json: @book }
     end
   end
@@ -28,6 +30,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
+      format.xml { render xml: @book }
       format.json { render json: @book }
     end
   end
@@ -44,9 +47,11 @@ class BooksController < ApplicationController
     respond_to do |format|
       if @book.save
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
+        format.xml { render xml: @book, status: :created, location: @book }
         format.json { render json: @book, status: :created, location: @book }
       else
         format.html { render action: "new" }
+        format.xml { render xml: @book.errors, status: :unprocessable_entity }
         format.json { render json: @book.errors, status: :unprocessable_entity }
       end
     end
@@ -58,9 +63,11 @@ class BooksController < ApplicationController
     respond_to do |format|
       if @book.update_attributes(params[:book])
         format.html { redirect_to @book, notice: 'Book was successfully updated.' }
+        format.xml { head :no_content }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
+        format.xml { render xml: @book.errors, status: :unprocessable_entity }
         format.json { render json: @book.errors, status: :unprocessable_entity }
       end
     end
@@ -73,6 +80,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to books_url }
+      format.xml { head :no_content }
       format.json { head :no_content }
     end
   end
