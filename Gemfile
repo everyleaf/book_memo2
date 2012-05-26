@@ -39,6 +39,8 @@ gem 'jquery-rails'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
+  gem 'capybara'
+  gem 'launchy'
 end
 gem 'pry-rails'
 gem 'factory_girl_rails'
