@@ -2,8 +2,12 @@
 require 'spec_helper'
 
 describe Book do
-  it 'タイトルが未入力の場合はエラー' do
-    book = Book.new
-    book.valid?.should be_false
+  describe 'validation' do
+    describe 'title' do
+      subject { Book.new.valid? }
+      it '未入力の場合はエラー' do
+        should be_false
+      end
+    end
   end
 end
