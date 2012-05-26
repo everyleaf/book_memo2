@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'spec_helper'
 
 describe "Books" do
@@ -6,6 +7,16 @@ describe "Books" do
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
       get books_path
       response.status.should be(200)
+    end
+  end
+
+  describe '/books/:id/edit' do
+    let!(:book){ FactoryGirl.create :book }
+    subject { page }
+
+    before { visit "/books/#{book.id}/edit" }
+    it "タイトルが設定されていること" do
+      find("#book_title").value.should == book.title
     end
   end
 end
