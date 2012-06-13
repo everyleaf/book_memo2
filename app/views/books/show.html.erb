@@ -15,6 +15,33 @@
   <%= @book.purchased_on %>
 </p>
 
+<ul>
+  <%= render :partial => "memos/show", :collection => @book.memos %>
+</ul>
+
+<% @memo = @book.memos.build if @memo.nil? %>
+<%= form_for(@memo) do |f| %>
+  <% if @memo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@memo.errors.count, "error") %> prohibited this memo from being saved:</h2>
+
+      <ul>
+      <% @memo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body, :style => "height: 5em" %>
+    <%= f.hidden_field :book_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
