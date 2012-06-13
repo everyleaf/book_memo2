@@ -1,6 +1,6 @@
 BookMemo2::Application.routes.draw do
   resources :books
-  resources :memos
+  resources :memos, :only => [:create, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
