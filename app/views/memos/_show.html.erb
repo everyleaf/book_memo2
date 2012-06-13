@@ -1,4 +1,4 @@
 <li id="memo-<%= show.id %>">
-  <%= show.body %> <%= link_to "削除", show, :method => :delete %>
+  <%= show.body %> <%= link_to "削除", [show.book, show], :method => :delete %>
 </li>
 

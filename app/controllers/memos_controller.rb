@@ -1,7 +1,7 @@
 class MemosController < ApplicationController
   def create
     begin
-      @book = Book.find(params[:memo].delete(:book_id))
+      @book = Book.find(params[:book_id])
       @memo = @book.memos.build(params[:memo])
       if @memo.save
         redirect_to @book
