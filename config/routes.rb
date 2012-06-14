@@ -1,4 +1,9 @@
 BookMemo2::Application.routes.draw do
+ # resources :boooooooks
+  get '/boooooooks', :to => "boooooooks#index", :as => :boooooooks_index
+  post '/boooooooks', :to => "boooooooks#create"
+  get '/boooooooks/new', :to => "boooooooks#new", :as => :boooooooks_new
+  delete '/boooooooks/:id', :to => "boooooooks#destroy"
   resources :books
 
   # The priority is based upon order of creation:
