@@ -6,14 +6,23 @@
 </p>
 
 <p>
-  <b>Memo:</b>
-  <%= @book.memo %>
-</p>
-
-<p>
   <b>Purchased on:</b>
   <%= @book.purchased_on %>
 </p>
+
+<table border="1" cellspacing="0" cellpadding="5">
+  <tr>
+    <th width="300px">Memo (<%= link_to 'Add new', new_memo_path %>)</th>
+    <th width="50px">&nbsp;</th>
+  </tr>
+
+<% @book.memos.each do |memo| %>
+  <tr>
+    <td><%= memo.content %></td>
+    <td><%= link_to 'Delete', memo, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
 
 
 <%= link_to 'Edit', edit_book_path(@book) %> |

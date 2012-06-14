@@ -16,6 +16,8 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    session[:book_id]=@book.id
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml { render xml: @book }
