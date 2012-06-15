@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @book.title %>
+</p>
+<p>
+<b>Memos:</b><br>
+<table>
+<% @book.memos.each do |m| %>
+  <tr>
+    <td><%= m.memo %></td>
+   
+  </tr>
+<% end %>
+</table>
+</p>
+<p>
+  <b>Purchased on:</b>
+  <%= @book.purchased_on %>
+</p>
+
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>

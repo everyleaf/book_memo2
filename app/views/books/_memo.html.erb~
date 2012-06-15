@@ -1,0 +1,10 @@
+<div >
+<% new_or_existing = memo.new_record? ? 'new' : 'existing' %>
+<% prefix = "book[#{new_or_existing}_memo_attributes][]" %>
+<% fields_for prefix, memo do |memo_form| -%>
+<p>
+Memo: <%= memo_form.text_field :memo %>
+<%= link_to_function "remove", "$(this).up('.task').remove()" %>
+</p>
+<% end -%>
+</div>

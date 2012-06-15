@@ -1,0 +1,25 @@
+<h1>Listing memos</h1>
+
+<table>
+  <tr>
+    <th>Memo</th>
+    <th>Book</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @memos.each do |memo| %>
+  <tr>
+    <td><%= memo.memo %></td>
+    <td><%= memo.book_id %></td>
+    <td><%= link_to 'Show', memo %></td>
+    <td><%= link_to 'Edit', edit_memo_path(memo) %></td>
+    <td><%= link_to 'Destroy', memo, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Memo', new_memo_path %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Memo:</b>
+  <%= @memo.memo %>
+</p>
+
+<p>
+  <b>Book:</b>
+  <%= @memo.book_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_memo_path(@memo) %> |
+<%= link_to 'Back', memos_path %>
