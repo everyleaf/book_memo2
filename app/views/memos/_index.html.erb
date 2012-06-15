@@ -1,0 +1,8 @@
+<h2>Memos</h2>
+<ul>
+<% @book.memos.each do |memo| %>
+  <% unless memo.id.nil? %>
+    <li><%= memo.body %> <%= link_to 'Destory', book_memo_path(@book, memo), confirm: 'r u sure?', method: :delete %></li>
+  <% end %>
+<% end %>
+</ul>
