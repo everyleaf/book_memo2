@@ -1,3 +1,3 @@
 class Memo < ActiveRecord::Base
-  attr_accessible :memo
+  attr_accessible :body, :book_id
 end

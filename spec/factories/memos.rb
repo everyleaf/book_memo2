@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :memo do
-    memo "MyString"
+    book_id 1
+    body "MyText"
   end
 end
