@@ -15,6 +15,10 @@
   <%= @book.purchased_on %>
 </p>
 
+<% @book.memos.each do |memo| %>
+  <p><%= memo.body %></p>
+<% end %>
+
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Add memo', new_book_memo_path(@book) %>
 <%= link_to 'Back', books_path %>
