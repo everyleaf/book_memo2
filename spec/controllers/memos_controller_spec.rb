@@ -21,7 +21,7 @@ describe MemosController do
     it "returns http success" do
       book = Book.create! book_attributes
       memo = Memo.create! valid_attributes(book.to_param)
-      post :new, {:book_id => memo.id, :body => memo.body}
+      post :new, {:book_id => book.to_param, :body => memo.body}
       response.should be_success
     end
   end
