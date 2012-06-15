@@ -41,6 +41,11 @@ group :test, :development do
   gem "rspec-rails", "~> 2.0"
   gem 'capybara'
   gem 'launchy'
+  gem 'guard', '0.10.0'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'libnotify'
+  gem 'rb-inotify'
 end
 gem 'pry-rails'
 gem 'factory_girl_rails'
