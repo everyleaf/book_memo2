@@ -1,0 +1,24 @@
+<%= form_for(@detailmemo) do |f| %>
+  <% if @detailmemo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@detailmemo.errors.count, "error") %> prohibited this detailmemo from being saved:</h2>
+
+      <ul>
+      <% @detailmemo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field(:book_id,:value => params[:bookid])%>
+  </div>
+  <div class="field">
+    <%= f.label :memo %><br />
+    <%= f.text_area :memo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_filter :find_book, :only => [:show, :destroy, :edit, :update]
+  before_filter :find_memo, :only => :show
 
   # GET /books
   # GET /books.json
@@ -89,4 +90,11 @@ class BooksController < ApplicationController
   def find_book
     @book = Book.find(params[:id])
   end
+
+  private
+  def find_memo
+    @memos = Detailmemo.find_all_by_book_id(params[:id])
+    p @memos
+  end
+
 end

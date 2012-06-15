@@ -9,6 +9,19 @@
   <b>Memo:</b>
   <%= @book.memo %>
 </p>
+<% if @memos %>
+  <% for memo in @memos %>
+    <p class="memo">
+      <%= memo.memo %>
+      <%= link_to 'Delete', memo,:controller => 'detailmemos', :action => 'destroy', :method => :delete %>
+    </p>
+  <% end %>
+<% end %>
+
+<span id="add_memo">
+<%= link_to('Add Memo', :controller => 'detailmemos', :action => 'new',
+            :bookid => @book) %>
+</span>
 
 <p>
   <b>Purchased on:</b>
