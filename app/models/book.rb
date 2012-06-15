@@ -2,7 +2,9 @@
 class Book < ActiveRecord::Base
   attr_accessible :memo, :purchased_on, :title
   validates :title, :presence => true
-
+  
+  has_many :memos, :dependent => :destroy, :order => "created_at desc"
+  
   before_create :total_books_count
 
   def total_books_count
