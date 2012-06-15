@@ -10,6 +10,17 @@ describe "Books" do
     end
   end
 
+=begin
+  describe '/books/:id' do 
+    let!(:book){ FactoryGirl.create :book }
+    subject { page }
+    before { visit "/books/#{book.id}" }
+    it "タイトルが設定されていること" do
+      find("#book_title").value.should == book.title
+    end
+  end
+=end
+
   describe '/books/:id/edit' do
     let!(:book){ FactoryGirl.create :book }
     subject { page }
