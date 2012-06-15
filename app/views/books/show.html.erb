@@ -15,7 +15,7 @@
   <%= @book.purchased_on %>
 </p>
 
-<p>
+<div>
   <b>Description:</b><br />
 <% @book.memos.each do |memo| %>
   <%= link_to 'Remove', memo, confirm: 'Are you sure?', method: :delete %>
@@ -28,6 +28,6 @@
   <%= f.text_area :description %><br />
   <%= f.submit %><br />
 <% end %>
-</p>
+</div>
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
