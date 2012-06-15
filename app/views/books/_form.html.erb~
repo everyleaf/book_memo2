@@ -31,10 +31,10 @@ Memo:<br>
     <%= f.submit %>
   </div>
 <% end %>
-<script>
-    var yunyun = function(){
-    $('#addYunyun').before('<input name="memos[][memo]" size="30" type="text"/><br>');
-}
-    </script>
+	<script>
+		var yunyun = function(){
+			$('#addYunyun').before('<input name="memos[][memo]" size="30" type="text"/><br>');
+		}
+	</script>
 
 

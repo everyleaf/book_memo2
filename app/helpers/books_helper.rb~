@@ -1,0 +1,9 @@
+module BooksHelper
+	def add_task_link name
+          link_to_function name , nil do |page|
+            page.insert_html :bottom, :memos, :partial => 'memo', :object => Memo.new
+          end
+        end
+
+
+end

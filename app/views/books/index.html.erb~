@@ -15,7 +15,7 @@
     <td><%= book.title %></td>
     <td><%= book.purchased_on %></td>
     <td><%= link_to 'Show', book %></td>
-    <td><%= link_to 'Destroy', book, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Destroy', book, confirm: 'Are you sure?', method :delete %></td>
   </tr>
 <% end %>
 </table>

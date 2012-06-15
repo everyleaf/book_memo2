@@ -1,0 +1,22 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+ 
+function addMemo() {  
+  idNumber++;  
+  //这里我们创建一个label控件  
+  label0 = document.createElement("label");  
+  label0.setAttribute("id","label"+idNumber);  
+  //创建输入框  
+  var textField = document.createElement("input");  
+  textField.setAttribute("type","text");  
+  textField.setAttribute("name","memo");  
+  textField.setAttribute("id","memo"+idNumber);  
+  label0.appendChild(textField);  
+    
+  document.getElementById(id).appendChild(label0); 
+  id= "memo"+idNumber;
+}  
+
+
+

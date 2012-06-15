@@ -1,0 +1,12 @@
+class Memo < ActiveRecord::Base
+belongs_to :Book, :foreign_key => "book_id"
+  attr_accessible :book_id, :memo
+validates_length_of :memo, :maximum => 100
+
+  before_create :total_books_count
+
+  def total_books_count
+    self.memo += "【 累計冊数#{Book.count + 1} 】"
+  end
+end
+

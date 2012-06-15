@@ -38,7 +38,7 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @book = Book.new(params[:book])
- params[:memos].each do |memo|
+ params[:memos].each_value do |memo|
    @book.memos.build(memo)
  end
     respond_to do |format|
