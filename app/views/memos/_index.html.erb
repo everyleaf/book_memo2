@@ -1,0 +1,15 @@
+<b>Memos</b>
+<ul>
+  <% if @book.memos.size < 2 %>
+    <li>No memos.</li>
+  <% else %>
+    <% @book.memos.each do |memo| %>
+      <% unless memo.id.nil? %>
+        <li><%= memo.memo %> 
+          (<%= memo.created_at %>) |
+          <%= link_to 'Destroy', book_memo_path(@book, memo), confirm: 'Are you sure?', method: :delete %>
+        </li>
+      <% end %>
+    <% end %>
+  <% end %>
+</ul>
