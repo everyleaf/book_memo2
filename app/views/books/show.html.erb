@@ -9,12 +9,24 @@
   <b>Memo:</b>
   <%= @book.memo %>
 </p>
+<% if @memos %>
+  <% for memo in @memos %>
+    <p class="memo">
+      <%= memo.memo %>
+      <%= link_to 'Delete', memo,:controller => 'detailmemos', :action => 'destroy', confirm: 'Are you sure?', :method => :delete %>
+
+    </p>
+  <% end %>
+<% end %>
 
 <p>
   <b>Purchased on:</b>
   <%= @book.purchased_on %>
 </p>
 
-
+<span id="add_memo">
+<%= link_to('Add Memo', :controller => 'detailmemos', :action => 'new',
+            :bookid => @book) %>
+</span>
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>

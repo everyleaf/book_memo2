@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Book:</b>
+  <%= @detailmemo.book_id %>
+</p>
+
+<p>
+  <b>Memo:</b>
+  <%= @detailmemo.memo %>
+</p>
+
+
+<%= link_to 'Edit', edit_detailmemo_path(@detailmemo) %> |
+<%= link_to 'Back', books_path %>
