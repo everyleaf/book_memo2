@@ -16,6 +16,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    @memo = @book.memos.build
     respond_to do |format|
       format.html # show.html.erb
       format.xml { render xml: @book }
