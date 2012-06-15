@@ -1,5 +1,6 @@
 # encoding: UTF-8
 class Book < ActiveRecord::Base
+  has_many :memos, :dependent => :destroy
   attr_accessible :memo, :purchased_on, :title
   validates :title, :presence => true
 
