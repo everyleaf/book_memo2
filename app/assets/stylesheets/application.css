@@ -11,3 +11,37 @@
  *= require_self
  *= require_tree .
 */
+
+@import "bootstrap";
+
+table
+{
+border-collapse:collapse;
+}
+
+th {
+    background-color: #AAAAAA;
+}
+
+th, td {
+    border: 1px solid black;
+    overflow: hidden;
+    width: 500px;
+}
+
+table,th, td
+{
+table-layout:auto;
+border: 1px solid black;
+text-align: center;
+}
+
+
+h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: left;
+  font-weight: normal;
+  color: $grayLight;
+}

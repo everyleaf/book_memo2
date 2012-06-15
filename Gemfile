@@ -22,6 +22,16 @@ end
 
 gem 'jquery-rails'
 
+group :test, :development do
+  gem "rspec-rails", "~> 2.0"
+  gem 'capybara'
+  gem 'launchy'
+end
+gem 'pry-rails'
+gem 'factory_girl_rails'
+gem 'bootstrap-sass', '2.0.0'
+gem "dynamic_form"
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -36,11 +46,3 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
-
-group :test, :development do
-  gem "rspec-rails", "~> 2.0"
-  gem 'capybara'
-  gem 'launchy'
-end
-gem 'pry-rails'
-gem 'factory_girl_rails'

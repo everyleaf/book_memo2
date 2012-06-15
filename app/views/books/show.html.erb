@@ -6,15 +6,15 @@
 </p>
 
 <p>
-  <b>Memo:</b>
-  <%= @book.memo %>
+  <b>Author:</b>
+  <%= @book.author %>
 </p>
 
 <p>
-  <b>Purchased on:</b>
-  <%= @book.purchased_on %>
+  <b>Purchase date:</b>
+  <%= @book.purchase_date %>
 </p>
 
-
 <%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'View Memos', book_memos_path(@book) %>|
 <%= link_to 'Back', books_path %>

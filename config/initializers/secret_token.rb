@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-BookMemo2::Application.config.secret_token = '97ab978246c99f550f2228ffb4b6b7bd6d1f515ec3810c3d1d7225f631f7d31defa4f7bc6cd11d9376e19711a951135b188bff86f6a3bc646aa95fc54ba87bb7'
+YacBookMemo::Application.config.secret_token = 'dc7daa364d5c23a9a9d46ec8de62a4fb7df7161f0be22add3b0c018cb2286c9814f339ae5d39ae6832c8bb86c1bb36c19d7810100f36a5f73435e46ae06d4f76'

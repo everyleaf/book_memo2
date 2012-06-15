@@ -3,8 +3,8 @@
 
 FactoryGirl.define do
   factory :book do
-    sequence(:title) { |n| "title_#{n}" }
-    memo "this is memo"
-    purchased_on Time.now
+    sequence(:title) { |n| "test_title_#{n}" }
+    author "mr jones"
+    purchase_date Time.now
   end
 end
