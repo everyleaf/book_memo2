@@ -15,9 +15,15 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :memo %><br />
-    <%= f.text_area :memo %>
+  <button id="add_memo">Add memo</button>
+  <div id="memo">
+    <% @book.memo.each do |m| %>
+      <%= fields_for m do |mm| %>
+        <div class="field">
+          <%= mm.text_area :value %>
+        </div>
+      <% end %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :purchased_on %><br />

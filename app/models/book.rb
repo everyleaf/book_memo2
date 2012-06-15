@@ -8,6 +8,8 @@ class Book < ActiveRecord::Base
   has_many :memo
 
   def total_books_count
-    self.memo += "【 累計冊数#{Book.count + 1} 】"
+    self.memo.each do |m|
+      m.value += "【 累計冊数#{Book.count + 1} 】"
+    end
   end
 end

@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(:version => 20120615071239) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
-    t.text     "memo"
     t.date     "purchased_on"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false

@@ -7,7 +7,7 @@
 
 <p>
   <b>Memo:</b>
-  <%= @book.memo %>
+  <%= render partial: 'memo_view', colleciton: @book.memo, as: :memo %>
 </p>
 
 <p>

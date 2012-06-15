@@ -42,7 +42,10 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
+    memo = params[:book].delete(:memo)
+
     @book = Book.new(params[:book])
+    #@book.memo <<  Memo.new({value: memo})
 
     respond_to do |format|
       if @book.save
