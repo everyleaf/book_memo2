@@ -1,6 +1,11 @@
-BookMemo2::Application.routes.draw do
-  resources :books
-
+YacBookMemo::Application.routes.draw do
+  root :to => 'books#index'
+  resources :books do
+    resources :memos
+  end
+  
+  #match "/books/:id/memos" => "memos#show"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

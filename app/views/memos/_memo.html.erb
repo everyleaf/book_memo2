@@ -1,0 +1,16 @@
+<h1><b>Book:</b>
+  <%= @book.title %></h1><br>
+  <% if @book.memos.any? %>
+<h2>Memos: <%= @book.memos.count %></h2><br>
+<table>
+  <% @memos.each do |memo| %>
+   <tr><td>
+    <b>On </b><%= memo.comment_date %><b>, </b><%= memo.name %><b> wrote: </b><br>
+      <%= memo.content %><br>
+    <%= link_to 'Delete Memo', [memo.book, memo], confirm: 'Are you sure?', method: :delete %><br><br>
+    </td></tr>
+<% end %>
+</table>
+<% else %>
+<h2>No memos. Please write a new one.</h2><br>
+<% end %>

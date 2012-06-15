@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-BookMemo2::Application.load_tasks
+YacBookMemo::Application.load_tasks
