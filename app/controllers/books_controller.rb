@@ -50,7 +50,8 @@ class BooksController < ApplicationController
         format.xml { render xml: @book, status: :created, location: @book }
         format.json { render json: @book, status: :created, location: @book }
       else
-        format.html { render action: "new" }
+#        format.html { render action: "new" }
+        format.html { render :new }
         format.xml { render xml: @book.errors, status: :unprocessable_entity }
         format.json { render json: @book.errors, status: :unprocessable_entity }
       end
@@ -66,7 +67,8 @@ class BooksController < ApplicationController
         format.xml { head :no_content }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+#        format.html { render action: "edit" }
+        format.html { render :edit }
         format.xml { render xml: @book.errors, status: :unprocessable_entity }
         format.json { render json: @book.errors, status: :unprocessable_entity }
       end

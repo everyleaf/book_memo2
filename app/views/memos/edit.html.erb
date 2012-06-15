@@ -1,0 +1,10 @@
+Title: <%= @book.title %><br />
+Memo: <%= @book.memo %><br />
+Purchased on: <%= @book.purchased_on %><br />
+<br />
+
+<%= form_for @memo, :url => book_memo_path(:book_id => @book.id,
+                    :id => @memo.id), :method => :put do |f| %>
+  Additional memo: <%= f.text_field :body %><br />
+  <%= f.submit %><br />
+<% end %>
