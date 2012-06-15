@@ -16,7 +16,10 @@
 </p>
 
 <% @book.memos.each do |memo| %>
-  <p><%= memo.body %></p>
+  <p>
+    <span><%= memo.body %></span>
+    <span><%= link_to 'Destroy', [@book, memo], confirm: 'Are you sure?', method: :delete %></span>
+  </p>
 <% end %>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
