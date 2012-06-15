@@ -5,6 +5,8 @@ class Book < ActiveRecord::Base
 
   before_create :total_books_count
 
+  has_many :memo
+
   def total_books_count
     self.memo += "【 累計冊数#{Book.count + 1} 】"
   end
