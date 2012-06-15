@@ -4,7 +4,7 @@
 FactoryGirl.define do
   factory :book do
     sequence(:title) { |n| "title_#{n}" }
-    memo "this is memo"
+#    memo "this is memo"
     purchased_on Time.now
   end
 end
