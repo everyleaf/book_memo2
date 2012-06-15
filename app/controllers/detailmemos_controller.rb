@@ -2,9 +2,6 @@ class DetailmemosController < ApplicationController
   # GET /detailmemos/new
   # GET /detailmemos/new.json
   def new
-    @test = request.headers['Referer']
-    p @test
-    p params
     @detailmemo = Detailmemo.new
 
     respond_to do |format|
