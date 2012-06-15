@@ -15,6 +15,19 @@
   <%= @book.purchased_on %>
 </p>
 
+<div>
+  <b>Description:</b><br />
+<% @book.memos.each do |memo| %>
+  <%= link_to 'Remove', memo, confirm: 'Are you sure?', method: :delete %>
+  <pre><%= memo.description %></pre>
+  <hr/>
+  <br />
+<% end %>
 
+<%= form_for @memo, :url => book_memos_path(@book) do |f| %>
+  <%= f.text_area :description %><br />
+  <%= f.submit %><br />
+<% end %>
+</div>
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
