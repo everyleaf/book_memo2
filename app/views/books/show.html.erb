@@ -16,7 +16,7 @@
 </p>
 
 <p>
-  <%= link_to 'Memo', new_book_memo_path(@book) %>
+  <%= link_to 'Add a memo', new_book_memo_path(@book) %>
 </p>
 <% @book.memos.each do |memo| %>
   <%= memo.body %> | 
