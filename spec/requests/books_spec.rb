@@ -37,4 +37,34 @@ describe "Books" do
       end
     end
   end
+
+  describe '/books/:id/memos/new' do
+    let!(:book){FactoryGirl.create :book }
+    subject {page }
+
+    before { visit "/books/#{book.id}/memos/new" }
+    let(:memo_body){["hoge1","hoge2"]}
+
+    context "add 1memo" do
+      before do
+         fill_in "memo[body]", with: memo_body[0]
+         click_on "Create Memo"
+      end
+
+      it "resist check" do
+         should have_content(memo_body[0])
+      end
+    end
+
+    context "add 2memo" do
+      before do
+         fill_in "memo[body]", with: memo_body[1]
+         click_on "Create Memo"
+      end
+
+      it "resist check" do
+         should have_content(memo_body[1])
+      end
+    end
+  end
 end
