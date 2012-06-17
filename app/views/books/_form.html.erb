@@ -15,7 +15,6 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
-  <button id="add_memo">Add memo</button>
   <div id="memo">
     <% @book.memo.each do |m| %>
       <%= fields_for m do |mm| %>
@@ -25,6 +24,7 @@
       <% end %>
     <% end %>
   </div>
+  <button id="add-memo">Add memo</button>
   <div class="field">
     <%= f.label :purchased_on %><br />
     <%= f.date_select :purchased_on %>
