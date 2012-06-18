@@ -8,6 +8,10 @@
 <p>
   <b>Memo:</b>
   <%= @book.memo %>
+  <% @book.memos.each do |memo| %>
+  <span><%= memo.body %></span>
+  <span><%= link_to 'delete", book_memo_path(:book_id => @book.id, :id => memo.id), :confirm => 'Are you sure?', :method => :delete %></span>
+  <% end %>
 </p>
 
 <p>
@@ -17,4 +21,5 @@
 
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<%= link_to 'Back', books_path %> |
+<%= link_to 'Add memo', new_book_memo_path(@book) %>
