@@ -37,4 +37,40 @@ describe "Books" do
       end
     end
   end
+
+  describe '/books/:id/memos/new' do
+    let!(:book){ FactoryGirl.create :book }
+    subject { page }
+
+    before { visit "/books/#{book.id}/memos/new" }
+    context "post memo" do
+      before do
+        fill_in "memo_text" , with: "test1"
+        click_on "Create Memo"
+      end
+
+      it "transit page" do
+        current_path.should == book_path(book)
+      end
+
+      it "さっきのとうこうあること" do
+        should have_content("test1")
+      end
+    end
+
+    context "role2" do
+      before do
+        fill_in "memo_text", with: "test2"
+        click_on "Create Memo"
+      end
+
+      it "transit page" do
+        current_path.should == book_path(book)
+      end
+
+      it "さっきのとうこうあること" do
+        should have_content("test2")
+      end
+    end
+  end
 end
