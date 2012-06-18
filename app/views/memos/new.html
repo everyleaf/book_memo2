@@ -1,0 +1,7 @@
+Title: <%= @book.title %><br/>
+<br/>
+<%= form_for @memo, :url => book_memos_path do |f| %>
+   Add new Memo(with in 100 moji):<br/>
+   <%= f.text_field :body %><br/>
+   <%= f.submit %>
+<% end %>
