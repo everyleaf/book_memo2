@@ -37,4 +37,25 @@ describe "Books" do
       end
     end
   end
+
+  describe "/books/new",  :js => true do
+    before do
+      visit "/books/new"
+      fill_in 'book[title]', with: "title1"
+      click_on 'Add memo'
+      click_on 'Add memo'
+      fill_in 'book[memo_attributes][0][value]',  with: 'memo1'
+      fill_in 'book[memo_attributes][1][value]',  with: 'memo2'
+
+      click_on 'Create Book'
+    end
+
+    context "with 2 memos in book creation step" do
+      let(:memos) { page.all(:xpath, '//ul/li') }
+      it "2 Memos were attached to the new book" do
+        memos.should have(2).items
+
+      end
+    end
+  end
 end
