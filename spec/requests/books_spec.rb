@@ -37,4 +37,42 @@ describe "Books" do
       end
     end
   end
+
+  describe '/books/:id/memos/new' do
+    let!(:book){ FactoryGirl.create :book }
+    subject { page }
+
+    before { visit "/books/#{book.id}/memos/new" }
+    context "Add the first memo" do
+      let(:memo_body){ 'the first memo' }
+      before do
+        fill_in "memo[body]" , with: memo_body
+        click_on "Create Memo"
+      end
+
+      it "check the page transition" do
+        current_path.should == book_path(book)
+      end
+
+      it "check the first memo" do
+        should have_content("the first memo")
+      end
+    end
+
+    context "Add the second memo" do
+      let(:memo_body){ 'the second memo' }
+      before do
+        fill_in "memo[body]" , with: memo_body
+        click_on "Create Memo"
+      end
+
+      it "check the page transition" do
+        current_path.should == book_path(book)
+      end
+
+      it "check the first memo" do
+        should have_content("the second memo")
+      end
+    end
+  end
 end
