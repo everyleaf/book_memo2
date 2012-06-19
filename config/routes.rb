@@ -1,5 +1,10 @@
 BookMemo2::Application.routes.draw do
-  resources :books
+
+  root :to => 'books#index'
+
+  resources :books do
+    resources :memos
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

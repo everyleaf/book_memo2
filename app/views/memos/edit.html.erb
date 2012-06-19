@@ -1,0 +1,8 @@
+Title:<%= @book.title %><br/>
+Memo:<%= @book.memo %><br/>
+Parchase Date:<%= @book.purchased_on %><br/>
+<br/>
+<%= form_for @memo, :url => book_memo_path(:book_id => @book.id, :id => @memo.id), :method => :put do |f| %>
+   Memo:<%= f.text_field :body %><br/>
+   <%= f.submit %><br/>
+<% end %>
