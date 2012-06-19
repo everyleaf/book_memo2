@@ -1,5 +1,6 @@
 BookMemo2::Application.routes.draw do
   resources :books
+  resources :memos
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
