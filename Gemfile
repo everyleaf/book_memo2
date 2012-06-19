@@ -44,3 +44,5 @@ group :test, :development do
 end
 gem 'pry-rails'
 gem 'factory_girl_rails'
+gem 'execjs'
+gem 'therubyracer'

@@ -15,6 +15,13 @@
   <%= @book.purchased_on %>
 </p>
 
+<%= link_to 'add memo', new_book_memo_path(@book) %><br/>
 
+<% @book.memos.each do |memo| %>
+  <%= memo.body %> |
+  <%= link_to "edit", edit_book_memo_path(:book_id =>@book.id, :id => memo.id) %> |
+  <%= link_to "delete", book_memo_path(:book_id => @book.id,:id => memo.id), :confirm =>"Are you sure?", :method => :delete %><br/>
+<%end%>
+<br/>
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
