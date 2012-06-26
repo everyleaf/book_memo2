@@ -13,10 +13,8 @@
 <% @books.each do |book| %>
   <tr>
     <td><%= book.title %></td>
-    <td><%= book.memo %></td>
     <td><%= book.purchased_on %></td>
     <td><%= link_to 'Show', book %></td>
-    <td><%= link_to 'Edit', edit_book_path(book) %></td>
     <td><%= link_to 'Destroy', book, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
