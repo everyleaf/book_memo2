@@ -27,12 +27,7 @@ class BooksController < ApplicationController
   # GET /books/new.json
   def new
     @book = Book.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml { render xml: @book }
-      format.json { render json: @book }
-    end
+    @book.memos.build
   end
 
   # GET /books/1/edit
@@ -43,7 +38,9 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @book = Book.new(params[:book])
-
+ params[:memos].each do |memo|
+   @book.memos.build(memo)
+ end
     respond_to do |format|
       if @book.save
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
