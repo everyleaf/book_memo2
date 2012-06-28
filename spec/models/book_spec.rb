@@ -11,11 +11,4 @@ describe Book do
     end
   end
 
-  describe '#total_books_count' do
-    let(:book){ FactoryGirl.build :book }
-    before { book.save }
-    it "memoに累計冊数が表示されること" do
-      book.memo.should include "【 累計冊数#{Book.count} 】"
-    end
-  end
 end
