@@ -15,11 +15,10 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
-  <div id="memos">Memo:<br>
-    <textarea name="memos[][body]" rows="4" cols ="40" ></textarea><br>
-    <button id="addMemo" type="button" onClick="addmemo()">Add Memo</button>  
+  <div class="field">
+    <%= f.label :memo %><br />
+    <%= f.text_area :memo %>
   </div>
- 
   <div class="field">
     <%= f.label :purchased_on %><br />
     <%= f.date_select :purchased_on %>
@@ -28,9 +27,3 @@
     <%= f.submit %>
   </div>
 <% end %>
-
-  <script>    
-  var addmemo = function(){   
-  $('#addMemo').before('<textarea name="memos[][body]" rows="4" cols ="40" ></textarea><br>');
-  }   
-  </script>

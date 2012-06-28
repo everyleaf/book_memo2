@@ -6,14 +6,8 @@
 </p>
 
 <p>
-  <b>Memos:</b><br>
-  <table>
-      <% @book.memos.each do |m| %>  
-      <tr>    
-        <td><%= m.body %></td>     
-        </tr>
-      <% end %>
-  </table>
+  <b>Memo:</b>
+  <%= @book.memo %>
 </p>
 
 <p>
@@ -22,4 +16,5 @@
 </p>
 
 
+<%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
