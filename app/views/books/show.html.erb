@@ -15,6 +15,7 @@
   <%= @book.purchased_on %>
 </p>
 
+<%= render 'memos/index' %>
+<%= render 'memos/form' %>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
